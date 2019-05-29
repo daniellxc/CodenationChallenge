@@ -1,0 +1,21 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div id="div1" style="text-align:center">
+  <h1>
+   {{ title }}
+  </h1>
+  <button id="btnPergunta" title="perguntar" (click)="perguntar()">pergutar</button>
+  <p> {{pergunta}} </p>
+</div>
+<div id="div2" style="text-align:center" *ngIf="model !== undefined ">
+  <button id="btnDecifrar"  (click)="decifrar()">decifrar</button>
+  <p>{{resposta}}</p>
+  <p>{{model.resumo_criptografico}}</p>
+
+  <fieldset>
+    <legend>Enviar arquivo para validação</legend>
+    <input type="file"  id="upload" (change)="uploadFile($event.target.files)">
+    <button id="btnEnviar"  (click)="enviarResposta()">enviar</button>
+  </fieldset>
+  
+</div>
+<router-outlet></router-outlet>
